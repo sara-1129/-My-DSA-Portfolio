@@ -1,10 +1,27 @@
 class Solution {
 public:
     int fib(int n) {
-        if (n <= 1)
+        int first = 0;
+        int second = 1;
+        int answer = 0;
+        if (n > 1)
         {
-            return n;
+         for (int i = 2; i<=n ; i++)
+        {
+            answer = first + second;
+            first = second;
+            second = answer;
         }
-        return fib(n-1)+fib(n-2);
+        }
+        else if (n == 1)
+        {
+            return 1 ;
+        }
+        
+        
+       
+       
+        
+        return answer;
     }
 };
