@@ -15,13 +15,15 @@ class Solution {
     
 	for (int i = 1; i <= n; i++)
 	{
+	   
 		ans =ans+ (n/i)*i;
+	    
 	
 	} 
-       if (n > 0) {
-                return ans ;
-       }
-        
+	if(n>0){
+       
+        return ans;
+	}
     }
 };
 
