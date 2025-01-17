@@ -10,43 +10,38 @@ class Solution {
   public:
     void nextPermutation(vector<int>& arr) {
         // code here
-        int n = arr.size();
-       
+        int n =arr.size();
         int pivotIndex = -1;
-        int rightGreatIndex = 0;
         
         for (int i = n-2; i >= 0; i--)
         {
-            if (arr[i] < arr [i+1])
+            if(arr[i] < arr[i+1])
             {
                 pivotIndex = i;
                 break;
             }
         }
+        
         if (pivotIndex == -1)
         {
-            sort(arr.begin(),arr.end());
+            reverse(arr.begin(),arr.end());
+            
         }
         else
         {
-            for (int i = n-1; i > pivotIndex; i--)
+            for (int i = n-1; i>pivotIndex; i--)
             {
                 if (arr[i] > arr[pivotIndex])
                 {
-                    rightGreatIndex = i;
+                    swap(arr[i],arr[pivotIndex]);
                     break;
                 }
+              
+                
             }
-            swap(arr[rightGreatIndex],arr[pivotIndex]);
-            
-            sort (arr.begin()+pivotIndex+1,arr.end());
+            sort(arr.begin()+pivotIndex+1,arr.end());
             
         }
-            
-            
-        
-        
-        
     }
 };
 
