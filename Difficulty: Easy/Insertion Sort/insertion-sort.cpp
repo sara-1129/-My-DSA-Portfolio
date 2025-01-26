@@ -7,22 +7,25 @@ using namespace std;
 class Solution {
   public:
     // Please change the array in-place
-    void insertionSort(vector<int>& arr) {
+    void insertionSort(vector<int>& arr,int i = 0) {
         // code here
         int n = arr.size();
        
-        for (int i = 0; i < n; i++)
+        if (i == n-1)
         {
-            for (int j = i; j > 0; j--)
+            return;
+        }
+            for (int j = i; j >= 0; j--)
             {
-                if (arr[j-1] > arr[j] )
+                if (arr[j] > arr[j+1] )
                 {
-                    swap(arr[j-1],arr[j]);
+                    swap(arr[j+1],arr[j]);
                 }
                 
             }
+            insertionSort(arr,i+1);
            
-        }
+        
     }
 };
 
