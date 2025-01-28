@@ -14,9 +14,16 @@ class Solution {
   public:
     int largest(vector<int> &arr) {
         // code here
-        sort(arr.begin(),arr.end());
-        int ans  = arr[arr.size()-1];
-        return ans;
+        int n = arr.size();
+        int largest = -1;
+        for(int i = 0; i < n; i++)
+        {
+            if (arr[i] > largest )
+            {
+                largest = arr[i];
+            }
+        }
+        return largest;
     }
 };
 
