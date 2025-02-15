@@ -1,4 +1,4 @@
-<h2><a href="https://www.geeksforgeeks.org/problems/lcm-and-gcd4516/0">LCM And GCD</a></h2><h3>Difficulty Level : Difficulty: Basic</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 14pt;">Given two integers a and b, write a function <code>lcmAndGcd()</code> to compute their LCM and GCD. The function inputs two integers a and b and returns a list containing their LCM and GCD.</span></p>
+<h2><a href="https://www.geeksforgeeks.org/problems/lcm-and-gcd4516/1">LCM And GCD</a></h2><h3>Difficulty Level : Difficulty: Basic</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 14pt;">Given two integers a and b, write a function <code>lcmAndGcd()</code> to compute their LCM and GCD. The function inputs two integers a and b and returns a list containing their LCM and GCD.</span></p>
 <p><span style="font-size: 14pt;"><strong>Examples:</strong></span></p>
 <pre><span style="font-size: 14pt;"><strong>Input: </strong>a = 5 , b = 10
 <strong>Output: </strong>[10, 5]
