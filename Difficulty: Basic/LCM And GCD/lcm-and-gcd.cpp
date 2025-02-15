@@ -9,20 +9,35 @@ class Solution {
     vector<int> lcmAndGcd(int a, int b) {
         // code here
     
-        
+        int temp1 = a;
+        int temp2 = b;
         
         vector<int> ans;
         
-        int hcf = 0;
-        for(int i =  min(a,b); i >= 1; i--)
+        int hcf = 1;
+        while(temp1 > 0 && temp2 > 0)
         {
-            if (a % i == 0 && b % i == 0)
+            if (temp1 > temp2)
             {
-                hcf = i;
-                break;
+                temp1 = temp1 % temp2;
+            }
+            else if (temp2 > temp1)
+            {
+              temp2 = temp2 % temp1;   
+            }
+            else
+            {
+                hcf = temp1;
             }
         }
         
+        if (temp1== 0)
+        {
+            hcf = temp2;
+        }
+        else{
+            hcf = temp1;
+        }
         int lcm = (a*b)/hcf;
         ans.push_back(lcm);
         ans.push_back(hcf);
