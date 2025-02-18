@@ -9,21 +9,16 @@ class Solution {
   public:
     int sumOfDivisors(int n) {
         // Write Your Code here
+        int sum = 0;
+        for(int i = 1; i <= n ;i++)
+        {
+            sum = sum +(n/i) * i;
+        }
+        if (n > 0)
+        {
+            return sum;
+        }
         
-         
-        int ans = 0;
-    
-	for (int i = 1; i <= n; i++)
-	{
-	   
-		ans =ans+ (n/i)*i;
-	    
-	
-	} 
-	if(n>0){
-       
-        return ans;
-	}
     }
 };
 
