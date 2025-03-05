@@ -9,16 +9,15 @@ using namespace std;
 
 class Solution {
   public:
-    int sumOfSeries(int n) {
+    int sumOfSeries(int n ,int sum = 0) {
         // code here
         
-        if (n <= 0)
+        if(n>0)
         {
-            return 0;
+             sum = pow(n,3) + sumOfSeries(n-1);
+        
         }
-           
-           // return pow((n*(n+1))/2,2);
-           return pow (n,3)+sumOfSeries(n-1);
+        return sum;
         
     }
 };
