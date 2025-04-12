@@ -8,11 +8,14 @@ class Solution {
        {
         if(nums[i] != 0)
         {
-            int temp = nums[j];
             nums[j] = nums[i];
-            nums[i] = temp;
             j++;
         }
+       }
+
+       for (int i = j; i < n; i++)
+       {
+        nums[i] = 0;
        }
        
     }
