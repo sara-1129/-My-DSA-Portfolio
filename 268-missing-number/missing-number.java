@@ -1,22 +1,18 @@
 class Solution {
     public int missingNumber(int[] nums) {
-       int n = nums.length;
-      ArrayList <Integer> ans = new ArrayList <> (n+1);
-      for (int i = 0; i <= n; i++) {
-            ans.add(0);
-        }
-      for (int i = 0; i < n; i++)
-      {
-        ans.set(nums[i],1);
-      }
-      for (int i = 0; i < ans.size(); i++)
-      {
-        if(ans.get(i) == 0)
-        {
-            return i;
-        }
-      }
-      return -1;
-    }
+        int n = nums.length;
+        int xor1 = 0;
+        int xor2 = 0;
 
+        for (int i = 0; i < n; i++)
+        {
+            xor1 = xor1 ^ i;
+             xor2 = xor2 ^ nums[i];
+
+        }
+        xor1 = xor1 ^ n;
+        int ans = xor1 ^ xor2;
+        return ans;
+
+    }
 }
