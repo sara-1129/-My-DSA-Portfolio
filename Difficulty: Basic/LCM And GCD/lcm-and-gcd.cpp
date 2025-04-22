@@ -4,48 +4,35 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
     vector<int> lcmAndGcd(int a, int b) {
         // code here
-    
-        int temp1 = a;
-        int temp2 = b;
-        
-        vector<int> ans;
-        
-        int hcf = 1;
-        while(temp1 > 0 && temp2 > 0)
+        if(a == b)
         {
-            if (temp1 > temp2)
-            {
-                temp1 = temp1 % temp2;
-            }
-            else if (temp2 > temp1)
-            {
-              temp2 = temp2 % temp1;   
-            }
-            else
-            {
-                hcf = temp1;
-            }
+            return {a,b};
         }
-        
-        if (temp1== 0)
+        int a1 = a;
+        int b1 = b;
+        int gcd = 1;
+        while(a1 > 0 && b1 > 0)
         {
-            hcf = temp2;
+            if(a1 >= b1)
+            {
+                a1 = a1 % b1;
+            }
+            else if (a1 < b1)
+            {
+                b1 = b1 % a1;
+            }
         }
-        else{
-            hcf = temp1;
-        }
-        int lcm = (a*b)/hcf;
-        ans.push_back(lcm);
-        ans.push_back(hcf);
-        return ans;
-        
-        
+        gcd = (a1 > 0)? a1:b1;
+        int lcm = (a*b)/gcd;
+        return {lcm, gcd};
     }
 };
+
 
 //{ Driver Code Starts.
 int main() {
