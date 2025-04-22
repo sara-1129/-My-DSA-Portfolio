@@ -9,37 +9,37 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 // User function Template for C++
 
 class Solution {
   public:
     int dataTypeSize(string str) {
         // your code here
-        
-        
-        
-        if(str=="Character"){
+        if(str=="Character")
+        {
             return sizeof(char);
         }
-        else if (str == "Integer"){
+        else if(str=="Integer")
+        {
             return sizeof(int);
         }
-        else if (str == "Long"){
+        else if(str=="Long")
+        {
             return sizeof(long);
         }
-        else if (str == "Float"){
+        else if(str=="Float")
+        {
             return sizeof(float);
-        }else if (str == "Double"){
+        }
+        else if(str=="Double")
+        {
             return sizeof(double);
         }
         
-        
-            
-                
-            
-        
     }
 };
+
 
 //{ Driver Code Starts.
 
