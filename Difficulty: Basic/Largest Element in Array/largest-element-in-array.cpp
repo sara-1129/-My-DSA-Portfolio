@@ -8,6 +8,7 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 // User function Template for C++
 
 class Solution {
@@ -15,17 +16,18 @@ class Solution {
     int largest(vector<int> &arr) {
         // code here
         int n = arr.size();
-        int largest = -1;
+        int max = INT_MIN;
         for(int i = 0; i < n; i++)
         {
-            if (arr[i] > largest )
+            if(arr[i] > max)
             {
-                largest = arr[i];
+                max = arr[i];
             }
         }
-        return largest;
+        return max;
     }
 };
+
 
 
 //{ Driver Code Starts.
