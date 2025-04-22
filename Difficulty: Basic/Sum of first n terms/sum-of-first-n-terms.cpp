@@ -5,22 +5,24 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 // User function template for C++
 
 class Solution {
   public:
-    int sumOfSeries(int n ,int sum = 0) {
+    int sumOfSeries(int n) {
         // code here
-        
+        int sum = 0;
         if(n>0)
         {
-             sum = pow(n,3) + sumOfSeries(n-1);
-        
+            sum = pow(n,3) + sumOfSeries(n-1);
         }
+       
         return sum;
         
     }
 };
+
 
 //{ Driver Code Starts.
 int main() {
