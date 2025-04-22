@@ -3,6 +3,7 @@
 using namespace std; 
 
 // } Driver Code Ends
+
 //User function Template for C++
 class Solution
 {
@@ -12,14 +13,15 @@ public:
         // Write Your Code here
         for (int i = 1; i <= N; i++)
         {
-            for(int j = 1; j <= i;j++)
+            for (int j = 1; j <=i; j++)
             {
-                cout <<"*";
+                cout << "*";
             }
             cout << " ";
         }
     }
 };
+
 
 //{ Driver Code Starts.
 int main()
