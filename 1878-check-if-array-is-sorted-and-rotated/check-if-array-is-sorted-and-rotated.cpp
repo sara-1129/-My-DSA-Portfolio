@@ -1,24 +1,26 @@
 class Solution {
 public:
     bool check(vector<int>& nums) {
-        
-       
         int n = nums.size();
-        int count = 0;
-        
-        for(int k = 0; k < n; k++)
+        int cnt = 0;
+        for (int i = 0;i < n-1; i++)
         {
-            if (nums[k]>nums[(k+1)%n])
+            if(nums[i] > nums[i+1])
             {
-                count++;
+                cnt++;
             }
         }
-        if (count > 1)
+        if(cnt > 1)
         {
             return false;
         }
-
+        else if(cnt == 1)
+        {
+            if(nums[0] < nums[n-1])
+            {
+                return false;
+            }
+        }
         return true;
-        
     }
 };
