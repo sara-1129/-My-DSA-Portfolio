@@ -15,7 +15,7 @@ public:
             while(temp > 0)
             {
                 int digit = temp % 10;
-                if(rev < INT_MIN/10 ||rev >INT_MAX/10)
+                if(rev < pow(-2,31)/10 ||rev >(pow(2,31)-1)/10)
                 {
                     return false;
                 }
