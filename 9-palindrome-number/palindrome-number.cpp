@@ -1,30 +1,32 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        if (x < 0)
+        if(x < 0)
         {
             return false;
         }
-        if (x==0)
+        else if(x == 0)
         {
             return true;
         }
-        int temp = x;
-        int rev = 0;
-        while(temp > 0)
-        {
-            int digit = temp % 10;
-            if (rev < pow(-2,31)/10 || rev > (pow(2,31)-1)/10)
+        else {
+            int temp = x;
+            int rev = 0;
+            while(temp > 0)
             {
-               return 0;
-            }   
-             rev = rev * 10 +digit;
-                temp = temp /10; 
+                int digit = temp % 10;
+                if(rev < INT_MIN/10 ||rev >INT_MAX/10)
+                {
+                    return false;
+                }
+                rev = rev * 10 +digit;
+                temp = temp / 10;
+            }
+            if(x == rev)
+            {
+                return true;
+            }
         }
-       if (rev == x)
-       {
-        return true;
-       } 
-       return false;
+        return false;
     }
 };
