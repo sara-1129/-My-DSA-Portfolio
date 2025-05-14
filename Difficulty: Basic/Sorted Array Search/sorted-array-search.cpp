@@ -13,11 +13,12 @@ class Solution {
     bool searchInSorted(vector<int>& arr, int k) {
 
         // Your code here
-        int n = arr.size();
-        for (int i = 0; i< n; i++)
+        for(int i = 0;i < arr.size();i++)
         {
-            if(arr[i] == k)
-            return true;
+            if(arr[i]==k)
+            {
+                return true;
+            }
         }
         return false;
     }
