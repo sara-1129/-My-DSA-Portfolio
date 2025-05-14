@@ -1,13 +1,14 @@
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
+        
+        int n = nums.size();
+        vector <int> temp;
+        k = k % n;
         if(k==0)
         {
             return;
         }
-        int n = nums.size();
-        vector <int> temp;
-        k = k % n;
         for(int i = n-k; i < n; i++)
         {
             temp.push_back(nums[i]);
