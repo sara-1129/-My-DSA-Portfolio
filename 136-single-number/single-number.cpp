@@ -2,18 +2,12 @@ class Solution {
 public:
     int singleNumber(vector<int>& nums) {
         int n = nums.size();
-        map<int,int> mp;
+       int xor1 = 0;
         for(int i = 0; i < n; i++)
         {
-           mp[nums[i]]++; 
+          xor1 = xor1^nums[i];  
         }
-        for(auto it:mp)
-        {
-            if(it.second == 1)
-            {
-                return it.first;
-            }
-        }
-        return -1;
+       
+        return xor1;
     }
 };
