@@ -4,26 +4,32 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
     // Function to count the number of digits in n that evenly divide n
     int evenlyDivides(int n) {
         // code here
         int temp = n;
-        int count  = 0;
-        while (temp > 0)
+        int cnt = 0;
+        while(temp > 0)
         {
             int digit = temp % 10;
-            if (digit != 0 && n % digit == 0)
+            if(digit==0)
             {
-                count++;
+                temp = temp / 10;
+                continue;
+            }
+            if(n %digit == 0)
+            {
+                cnt++;
             }
             temp = temp / 10;
-            
         }
-        return count;
+        return cnt;
     }
 };
+
 
 //{ Driver Code Starts.
 int main() {
