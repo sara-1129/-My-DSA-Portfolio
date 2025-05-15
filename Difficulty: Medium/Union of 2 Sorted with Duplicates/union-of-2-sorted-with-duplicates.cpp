@@ -5,32 +5,32 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
     // a,b : the arrays
     // Function to return a list containing the union of the two arrays.
     vector<int> findUnion(vector<int> &a, vector<int> &b) {
         // Your code here
+        set <int> temp;
+        for(int i = 0; i < a.size(); i++)
+        {
+            temp.insert(a[i]);
+        }
+        for(int i = 0; i < b.size(); i++)
+        {
+            temp.insert(b[i]);
+        }
+        vector<int> ans;
+        for(auto it:temp)
+        {
+            ans.push_back(it);
+        }
+        return ans;
         // return vector with correct order of elements
-        int n1 =a.size();
-        int n2 =b.size();
-        set <int> s;
-        for(int i = 0; i< n1; i++)
-        {
-            s.insert(a[i]);
-        }
-        for(int i = 0; i< n2; i++)
-        {
-            s.insert(b[i]);
-        }
-        vector <int> unions;
-        for(auto it : s)
-        {
-            unions.push_back(it);
-        }
-        return unions;
     }
 };
+
 
 //{ Driver Code Starts.
 int main() {
