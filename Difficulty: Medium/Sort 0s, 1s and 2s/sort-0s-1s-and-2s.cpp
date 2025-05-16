@@ -9,42 +9,34 @@ class Solution {
   public:
     void sort012(vector<int>& arr) {
         // code here
-        vector<int> ans;
+        
         int n = arr.size();
-        int cnt0 = 0;
-        int cnt1 = 0;
-        int cnt2 = 0;
-        for(int i = 0; i< n; i++)
+        int low =0;
+        int high = n-1;
+        int mid  = 0;
+        while(high >= mid)
         {
-            if(arr[i] == 0)
+            if(arr[mid] == 0)
             {
-                cnt0++;
+                int temp = arr[mid];
+                arr[mid]= arr[low];
+                arr[low] =temp;
+                mid++;
+                low++;
             }
-            else if(arr[i] == 1)
+            else if(arr[mid] == 1)
             {
-                cnt1++;
+                mid++;
             }
-            else if(arr[i] == 2)
+            else if(arr[mid] == 2)
             {
-                cnt2++;
+                int temp = arr[mid];
+                arr[mid]= arr[high];
+                arr[high] =temp;
+                high--;
             }
         }
-        for(int i = 0; i < cnt0; i++)
-        {
-            ans.push_back(0);
-        }
-         for(int i = 0; i < cnt1; i++)
-        {
-            ans.push_back(1);
-        }
-         for(int i = 0; i < cnt2; i++)
-        {
-            ans.push_back(2);
-        }
-         for(int i = 0; i < n; i++)
-        {
-            arr[i] = ans[i];
-        }
+        
     }
 };
 
