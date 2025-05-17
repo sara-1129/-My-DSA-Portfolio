@@ -12,15 +12,30 @@ class Solution {
   public:
     int upperBound(vector<int>& arr, int target) {
         // code here
+        
         int n = arr.size();
-        for(int i = 0; i < n; i++)
+        int low = 0;
+        int high = n-1;
+        while(high >= low)
         {
-            if(arr[i] > target)
+            int mid =  (low + high)/2;
+            if(arr[mid] <= target)
             {
-                return i;
+                low = mid + 1;   
             }
+            else if(arr[mid] > target)
+            {
+                if(arr[mid-1] <=target)
+                {
+                    return mid;
+                }
+                high = mid -1;
+            }
+            
+            
         }
         return n;
+       
     }
 };
 
