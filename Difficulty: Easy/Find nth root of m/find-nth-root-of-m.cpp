@@ -2,14 +2,23 @@ class Solution {
   public:
     int nthRoot(int n, int m) {
         // Code here.
-        int ans = -1;
-        for(int i = 0; pow(i,n) <= m; i++)
+        int low = 1;
+        int high = m;
+        while(high >= low)
         {
-            if(pow(i,n) == m)
+            int mid = (low+high)/2;
+            if(pow(mid,n) < m)
             {
-                ans = i;
+                low = mid + 1;
+            }
+            else if(pow(mid,n) > m)
+            {
+                high = mid - 1;
+            } 
+            else {
+                return mid;
             }
         }
-        return ans;
+        return -1;
     }
 };
