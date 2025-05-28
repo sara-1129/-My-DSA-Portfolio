@@ -3,7 +3,6 @@ public:
     string reverseWords(string s) {
         int n = s.length();
         string ans = "";
-        stack <string> words;
         string word;
         for(int i = 0; i < n; i++)
         {
@@ -12,24 +11,27 @@ public:
                 word += s[i];
             }
             else {
-                if(!word.empty())
+                if(!word.empty() && ans.empty())
                 {
-                    words.push(word);
-                    word = "";
+                   ans.insert(0,word);
                 }
+                else if(!word.empty())
+                {
+                    ans.insert(0,word + " ");
+                }
+                word = "";
             }
+            
         }
-        if(!word.empty())
-        {
-            words.push(word);
-        }
-        while(words.size() != 1)
-        {
-            ans += words.top() + " ";
-            words.pop();
-        }
-
-        ans += words.top();
+        if(!word.empty() && ans.empty())
+                {
+                   ans.insert(0,word);
+                }
+                else if(!word.empty())
+                {
+                    ans.insert(0,word + " ");
+                }
+        
         return ans;
     }
 };
