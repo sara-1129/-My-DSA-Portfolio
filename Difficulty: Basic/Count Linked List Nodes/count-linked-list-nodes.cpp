@@ -14,8 +14,8 @@ class Solution {
 
         // Code here
         Node *temp = head;
-        int cnt = 1;
-        while(temp->next != nullptr) 
+        int cnt = 0;
+        while(temp != nullptr) 
         {
             temp = temp->next;
             cnt++;
