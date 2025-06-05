@@ -13,14 +13,11 @@ class Solution {
     bool searchKey(int n, Node* head, int key) {
         // Code here
         Node* mover = head;
-        while(mover->next != nullptr) {
+        while(mover != nullptr) {
             if(mover->data == key) {
                 return true;
             }
             mover = mover->next;
-        }
-        if(mover-> data == key) {
-            return true;
         }
         return false;
     }
