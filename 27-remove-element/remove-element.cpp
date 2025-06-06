@@ -6,7 +6,7 @@ public:
         for( i = 0; i < n; i++)
         {
             if (nums[i] != val) {
-                swap(nums[i],nums[j]);
+               nums[j] = nums[i];
                 j++;
             }
         }
