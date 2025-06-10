@@ -13,12 +13,11 @@ class Solution {
     int getCount(struct Node* head) {
 
         // Code here
-        Node *temp = head;
+        Node* mover = head;
         int cnt = 0;
-        while(temp != nullptr) 
-        {
-            temp = temp->next;
+        while(mover != nullptr)  {
             cnt++;
+            mover = mover->next;
         }
         return cnt;
     }
