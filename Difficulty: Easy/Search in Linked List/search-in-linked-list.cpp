@@ -12,12 +12,15 @@ class Solution {
     // Function to count nodes of a linked list.
     bool searchKey(int n, Node* head, int key) {
         // Code here
+        if(n == 0)return false;
+        
         Node* mover = head;
         while(mover != nullptr) {
             if(mover->data == key) {
                 return true;
             }
             mover = mover->next;
+            
         }
         return false;
     }
