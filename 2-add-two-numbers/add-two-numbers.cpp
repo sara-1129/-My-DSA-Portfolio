@@ -13,43 +13,26 @@ public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode* mov1 = l1;
         ListNode* mov2 = l2;
-        ListNode* head = new ListNode(mov1->val + mov2->val);
-        int carry = head->val / 10;
-        head->val = head->val % 10;
-        mov1 = mov1->next;
-        mov2 = mov2->next;
-        ListNode* mover = head;
-        while(mov1 != nullptr && mov2 != nullptr) {
-            ListNode* temp = new ListNode(mov1->val + mov2->val + carry);
-            carry = temp->val / 10;
-            temp->val = temp->val % 10;
+        ListNode* dummy = new ListNode(-1);
+        int carry = 0;
+        ListNode* mover = dummy;
+        while(mov1 != nullptr || mov2 != nullptr) {
+            int sum = carry;
+            if(mov1) {sum += mov1->val;}
+            if(mov2) {sum += mov2->val;}
+            carry = sum / 10;
+            ListNode* temp = new ListNode(sum % 10);
             mover->next = temp;
             mover = mover->next;
-            mov1 = mov1->next;
-            mov2 = mov2->next;
+            if(mov1) {mov1 = mov1->next;}
+            if(mov2) {mov2 = mov2->next;}
+            
         }
-        while(mov1 != nullptr){
-            ListNode* temp = new ListNode(mov1->val + carry);
-            carry = temp->val / 10;
-            temp->val = temp->val % 10;
-            mover->next = temp;
-            mover = mover->next;
-            mov1 = mov1->next;
-        }
-        while(mov2 != nullptr){
-            ListNode* temp = new ListNode(mov2->val + carry);
-            carry = temp->val / 10;
-            temp->val = temp->val % 10;
-            mover->next = temp;
-            mover = mover->next;
-            mov2 = mov2->next;
-        }
-
         if(carry != 0) {
             ListNode* temp = new ListNode(carry);
             mover->next = temp;
             mover = mover->next;
         }
-        return head;
+        return dummy->next;
     }
 };
