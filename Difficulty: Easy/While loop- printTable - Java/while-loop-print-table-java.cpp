@@ -1,10 +1,3 @@
-//{ Driver Code Starts
-// Initial Template for C++
-#include <iostream>
-using namespace std;
-
-
-// } Driver Code Ends
 
 class Solution {
   public:
@@ -19,17 +12,3 @@ class Solution {
     }
 };
 
-
-//{ Driver Code Starts.
-
-int main() {
-    int n;
-    cin >> n; // Take input from user
-
-    Solution solution;
-    solution.calculateMultiples(n); // Call the function
-
-    return 0;
-}
-
-// } Driver Code Ends
