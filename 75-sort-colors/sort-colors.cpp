@@ -17,15 +17,14 @@ public:
             }
         }
 
-        nums.clear();
         for(int i = 0; i < cnt0; i++) {
-            nums.push_back(0);
+            nums[i] = 0;
         }
-        for(int i = 0; i < cnt1; i++) {
-            nums.push_back(1);
+        for(int i = cnt0; i < cnt0 + cnt1; i++) {
+            nums[i] = 1;
         }
-        for(int i = 0; i < cnt2; i++) {
-            nums.push_back(2);
+        for(int i = cnt0 + cnt1; i < cnt0 + cnt1 + cnt2; i++) {
+            nums[i] = 2;
         }
     }
 };
