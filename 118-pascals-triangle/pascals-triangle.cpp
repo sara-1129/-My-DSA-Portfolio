@@ -1,20 +1,19 @@
 class Solution {
 public:
+    vector <int> nthPascalRow (int row) {
+        int n = row - 1;
+        vector <int> temp ={1};
+        int nCr = 1;
+        for(int col = 1; col <= n; col++) {
+            nCr = nCr *(n-col+1)/col;
+            temp.push_back(nCr);
+        }
+        return temp;
+    }
     vector<vector<int>> generate(int numRows) {
-        vector<vector<int>> ans = {{1}, {1,1}};
-        if(numRows == 1) {
-            return {{1}};
-        }
-        if(numRows == 2) {
-            return ans;
-        }
-
-        for(int i = 1; i < numRows - 1; i++) {
-            vector <int> temp = {1};
-            for(int j = 0; j < i; j++) {
-                temp.push_back(ans[i][j] + ans[i][j+1]);
-            }
-            temp.push_back(1);
+        vector<vector<int>> ans;
+        for(int i = 1; i <=numRows; i++) {
+            vector<int>temp = nthPascalRow(i);
             ans.push_back(temp);
         }
         return ans;
