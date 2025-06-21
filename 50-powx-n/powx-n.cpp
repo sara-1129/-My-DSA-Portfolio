@@ -1,23 +1,25 @@
 class Solution {
 public:
+    
+    double myPowPositive(double x, int n) {
+      long long N = (n < 0) ?(-(long long) n): n;
+      
+        if(N == 0) {
+            return 1;
+        }  
+        if(N % 2 == 0) {
+            return myPow(x*x, N/2);
+        }
+        else {
+            return x*myPow(x*x,N/2);
+        }
+    }
+    
     double myPow(double x, int n) {
-        if(x == 1 || n == 0) return 1;
-        long long N = ( n < 0) ? (-(long long)n) : n;
-        double base = x;
-        double ans = 1;
-        while(N != 0) {
-            if(N % 2 == 0){
-                N = N / 2;
-                base = base * base;   
-            }
-            else {
-                ans = ans * base;
-                N--;
-            }
-        }
-        if(n < 0) {
-            ans = (double)(1.0)/ (double)(ans);
-        }
-        return ans;
+      double ans = myPowPositive(x,n);
+      if(n < 0) {
+        ans = 1/ans;
+      }
+      return ans;
     }
 };
