@@ -1,25 +1,15 @@
 class Solution {
 public:
-    bool linearSearch(vector<int> &nums , int num) {
-        int n = nums.size();
-        for(int i = 0; i < n; i++)
-        {
-            if(nums[i] == num) 
-            {
-                return true;
-            }
-            
-        }
-        return false;
-    }
     int missingNumber(vector<int>& nums) {
         int n = nums.size();
-        for(int i = 0; i < n+1; i++) {
-            if(!linearSearch(nums,i))
-            {
-                return i;
-            }
+        int xor1 = n;
+        int xor2 = 0;
+        for(int i = 0; i < n; i++) 
+        {
+            xor1 = xor1 ^ i;
+            xor2 = xor2 ^ nums[i];
         }
-        return -1;
+
+        return xor1 ^ xor2;
     }
 };
