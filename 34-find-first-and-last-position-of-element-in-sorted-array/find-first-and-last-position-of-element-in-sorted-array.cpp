@@ -49,6 +49,7 @@ public:
         int low = 0;
         int high = n - 1;
         int first = firstOccurence(nums,target,low,high);
+        if(first == -1)return {-1,-1};
         int last = lastOccurence(nums,target,low,high);
 
         return {first, last};
