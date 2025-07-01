@@ -2,7 +2,7 @@ class Solution {
 public:
     int binarySearch(vector<int>& nums, int target, int low, int high) {
         if (high >= low) {
-            int mid = (low + high) / 2;
+            int mid = low + (high - low) / 2;
             if (nums[mid] < target) {
                 return binarySearch(nums, target, mid + 1, high);
             }
