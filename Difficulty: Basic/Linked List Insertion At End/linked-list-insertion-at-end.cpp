@@ -12,18 +12,18 @@ class Solution {
   public:
     Node *insertAtEnd(Node *head, int x) {
         // Code here
-        Node * temp = new Node(x);
-        if(head == nullptr) {
+        Node* temp = new Node(x);
+        if(head == nullptr)
+        {
             head = temp;
+            return head;
         }
-        else {
-            Node* mover = head;
-            while(mover-> next != nullptr)
-            {
-                mover = mover->next;
-            }
-            mover->next = temp;
+        Node* mover = head;
+        while(mover->next != nullptr)
+        {
+            mover = mover->next;
         }
+        mover->next = temp;
         return head;
     }
 };
