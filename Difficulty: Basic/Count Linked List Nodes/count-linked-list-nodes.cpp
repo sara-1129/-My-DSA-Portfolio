@@ -15,9 +15,10 @@ class Solution {
         // Code here
         Node* mover = head;
         int cnt = 0;
-        while(mover != nullptr)  {
-            cnt++;
+        while(mover != nullptr)
+        {
             mover = mover->next;
+            cnt++;
         }
         return cnt;
     }
