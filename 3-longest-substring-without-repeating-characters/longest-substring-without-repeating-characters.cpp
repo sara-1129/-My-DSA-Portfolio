@@ -14,7 +14,8 @@ public:
             }
             else
             {
-                //Condition for palindromic strings
+                //If the previous occurence of character is not in current window we 
+                //cant consider that it has already occured
                 if(l < mp[s[r]] + 1)
                 {
                     l = mp[s[r]] + 1;
