@@ -5,21 +5,20 @@ public:
       int l = 0;
       int r = 0;
       int cntZero = 0;
-      int i = 0;
       int maxlen = 0;
-      vector <int> arr;
       while(r < n)
       {
         if(nums[r] == 0)
         {
-            arr.push_back(r);
             cntZero++;
         }
-        if(cntZero > k)
+        while(cntZero > k)
         {
-            l = arr[i] + 1;
-            i++;
-            cntZero--;
+            if(nums[l] == 0)
+            {
+                cntZero--;
+            }
+            l++;
         }
         maxlen = max(maxlen, r - l + 1);
         r++;
