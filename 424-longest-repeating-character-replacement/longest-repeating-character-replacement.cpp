@@ -15,14 +15,9 @@ public:
             {
                 maxlen = max(maxlen, r - l + 1);
             }
-            while(r - l + 1 - maxf > k)
+            if(r - l + 1 - maxf > k)
             {
                 mp[s[l]]--;
-                maxf = 0;
-                for(auto it : mp)
-                {
-                    maxf = max(maxf, it.second);
-                }
                 l++;
             }
             r++;
