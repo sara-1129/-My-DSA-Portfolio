@@ -14,12 +14,8 @@ public:
           {
             cnt++;
             i++;
-            j++;
           }
-          else
-          {
-            j++;
-          }
+          j++;
         }
         return cnt;
     }
