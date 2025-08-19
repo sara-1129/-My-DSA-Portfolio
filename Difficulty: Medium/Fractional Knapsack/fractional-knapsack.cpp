@@ -14,32 +14,29 @@ class Solution {
         int n = val.size();
         double ans = 0;
         int usedCapacity = capacity;
-       vector <pair<double, double>> mp;
+       vector <pair<double, int>> mp;
         for(int i = 0; i < n; i++)
         {
             double ratio = (double)(val[i])/ double(wt[i]);
             mp.push_back({ratio,wt[i]});
         }
          
-        auto cmp = [] (const pair<double, double> & a,const pair<double, double> & b){
+        auto cmp = [] (const pair<double, int> & a,const pair<double, int> & b){
             return a.first > b.first;
         };
         sort(mp.begin(),mp.end(),cmp);
         
         for(auto it : mp)
         {
-            if(usedCapacity - it.second>= 0)
+            if(usedCapacity <= 0)
             {
-                usedCapacity -= it.second;
-                ans = ans + (it.first * it.second);
+               break;
             }
-            else
-            {
-                ans = ans + (it.first * usedCapacity);
-                usedCapacity = 0;
+            
+            int taken = min(it.second, usedCapacity);
+            ans = ans + (it.first * taken);
+            usedCapacity -= taken;
                 
-            }
-            if(usedCapacity == 0)break;
         }
             return ans;
     }
