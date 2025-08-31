@@ -3,7 +3,7 @@ public:
     void rotate(vector<vector<int>>& matrix) {
         int n = matrix.size();// gives number of rows 
 
-        for(int i = 0 ; i < n; i++) 
+        for(int i = 0 ; i < n - 1; i++) 
         {  
             for(int j = i + 1; j < n; j++) 
             {
