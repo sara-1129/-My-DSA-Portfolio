@@ -3,9 +3,10 @@ public:
     void rotate(vector<vector<int>>& matrix) {
         int n = matrix.size();// gives number of rows 
         vector<vector<int>> ans;
-        for(int i = 0 ; i < n; i++)
+        
+        for(int i = 0 ; i < n; i++) // outer loop is for columns
         {   vector <int> temp;
-            for(int j = n - 1; j >= 0; j--)
+            for(int j = n - 1; j >= 0; j--) //Inner loop is for row traversal
             {
                 temp.push_back(matrix[j][i]);
             }
