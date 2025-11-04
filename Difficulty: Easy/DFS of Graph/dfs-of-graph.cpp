@@ -1,24 +1,23 @@
 class Solution {
   public:
-    void traverse(int node, vector<vector<int>>& adj, vector<int> &visited, vector<int> &ans)
+    void traverse(vector<vector<int>>& adj, vector<int>& visited, vector<int>& ans, int node)
     {
         if(visited[node])return;
-        ans.push_back(node);
         visited[node] = 1;
-        for(auto it: adj[node]) {
+        ans.push_back(node);
+        for(auto it : adj[node]) {
             if(!visited[it]) {
-                traverse(it, adj, visited, ans);
+                traverse(adj,visited,ans,it);
             }
         }
+        
     }
     vector<int> dfs(vector<vector<int>>& adj) {
         // Code here
-        int n =  adj.size();
-        vector <int> visited(n, 0);
+        int n = adj.size();
         vector<int> ans;
-        
-        traverse(0, adj, visited, ans);
+        vector<int> visited(n,0);
+        traverse(adj, visited, ans, 0);
         return ans;
-        
     }
 };
