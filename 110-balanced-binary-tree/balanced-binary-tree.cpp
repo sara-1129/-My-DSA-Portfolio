@@ -13,32 +13,15 @@ class Solution {
 public:
     int height(TreeNode* root) {
         if(root == nullptr)return 0;
-         queue<TreeNode*> q;
-         q.push(root);
-         int h = 0;
-         while(!q.empty()) {
-            int size = q.size();
-            for(int i  = 0; i < size; i++) {
-                TreeNode* node = q.front();
-                q.pop();
-                if(node->left)q.push(node->left);
-                if(node->right)q.push(node->right);
-            }
-            h++;
-         }
-         return h;
+        int l = height(root->left);
+        int r = height(root->right);
+        if(l == -1 || r == -1)return -1;
+        if(abs(l - r) > 1)return -1;
+        return 1 + max(l, r);
     }
     
     bool isBalanced(TreeNode* root) {
-        queue<TreeNode*> s;
-        if(root == nullptr)return true;
-        int diff = height(root->left) - height(root->right);
-        if(diff < -1 || diff > 1) {
-            return false;
-        }
-        else {
-            return isBalanced(root->left) && isBalanced(root->right);
-        }
-        return true;
+       return height(root) != -1;
+        
     }
 };
