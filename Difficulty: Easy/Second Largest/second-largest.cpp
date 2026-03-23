@@ -3,16 +3,17 @@ class Solution {
     int getSecondLargest(vector<int> &arr) {
         // code here
         int n = arr.size();
-        sort(arr.begin(),arr.end());
-        int largest = arr[n-1];
-        int secLargest = -1;
-        
-        for(int i = n -2; i >= 0; i--) {
-            if(arr[i] < largest) {
-                secLargest = arr[i];
-                break;
+        int largest = -1;
+        int slargest = -1;
+        for(int i = 0; i < n; i++) {
+            if(arr[i] > largest) {
+                slargest = largest;
+                largest = arr[i];
+            }
+            else if(arr[i] > slargest && arr[i] < largest){
+                slargest = arr[i];
             }
         }
-        return secLargest;
+        return slargest;
     }
 };
